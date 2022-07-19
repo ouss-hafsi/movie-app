@@ -1,0 +1,34 @@
+@media  screen and (max-width:637px) {
+    .nav-toggle{
+      display: block;
+    }
+    .nav-menu{
+      position: fixed;
+      top: 7vh;
+      right: 0;
+      width: 50%;
+      height: 93vh;
+      padding-bottom: 300px;
+      background-color: black;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition:0.5s ease-in ;
+    }
+  /* NAV ACTIVE CLASS */
+    .nav-active {
+      transform: translateX(0%);
+    }
+  }
+  
+  /* TOGGLE ICON ANIMATION */
+  .toggle .line1{
+  transform: rotate(-45deg) translate(-4px, 5px);
+  }
+  
+  .toggle .line2{
+  opacity: 0;
+  }
+  
+  .toggle .line3{
+    transform: rotate(45deg) translate(-4px, -5px);
+  }
