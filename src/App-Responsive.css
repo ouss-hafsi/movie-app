@@ -13,11 +13,13 @@
       flex-direction: column;
       transform: translateX(100%);
       transition:0.5s ease-in ;
+      z-index: 99;
     }
   /* NAV ACTIVE CLASS */
     .nav-active {
       transform: translateX(0%);
     }
+
   }
   
   /* TOGGLE ICON ANIMATION */

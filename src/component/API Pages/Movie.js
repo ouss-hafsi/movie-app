@@ -1,8 +1,28 @@
 import {Link} from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 
 const Movie =({movie, handleUpdate}) => {
+
+    const [disabled, setDisabled] = useState(false)
+    const chosenMovie = localStorage.getItem('movies')
+    const moviesArr = JSON.parse(chosenMovie) 
     
+    function doubleCheck() {
+    if(moviesArr ) {
+        const checkMovie = moviesArr.find(movies => movies.id === movie.id) 
+        if (checkMovie) {
+            return setDisabled(true)
+        } else {
+            return 
+        }
+    }
+
+      
+      }
+useEffect(() => {
+    doubleCheck()
+},[])
     
     return (
         <>
@@ -19,7 +39,7 @@ const Movie =({movie, handleUpdate}) => {
             <button className='read-more-btn'>Read More</button>
             </Link>
         
-            <button className='add-fav-btn' onClick={(id) => {handleUpdate(movie.id)}}>Add to favorite</button>
+            <button disabled={disabled} className='add-fav-btn'  onClick={(id) => {handleUpdate(movie.id)}}>Add to favorite</button>
           
     </div>
         </>
